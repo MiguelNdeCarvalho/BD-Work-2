@@ -3,8 +3,8 @@ create table clients(
     password TEXT NOT NULL,
     name TEXT NOT NULL,
     join_date DATE NOT NULL,
-    adress TEXT NOT NULL,
-    card_number SERIAL NOT NULL
+    address TEXT NOT NULL,
+    card_num SERIAL NOT NULL
 );
 
 create table payments(
@@ -22,7 +22,7 @@ create table movies(
     synopse TEXT NOT NULL,
     place TEXT NOT NULL,
     orig_lang TEXT NOT NULL,
-    path TEXT NOT NULl
+    url TEXT NOT NULl
 );
 
 create table title(
@@ -73,4 +73,46 @@ create table categories(
     category TEXT NOT NULL,
     foreign key (movie_ID) references movies(movie_ID) on delete cascade,
     PRIMARY KEY (movie_ID,category)
+);
+
+create table history(
+    username TEXT NOT NULL,
+    movie_ID SERIAL NOT NULL,
+    watched_date DATE NOT NULL,
+    foreign key (movie_ID) references movies(movie_ID) on delete cascade,
+    PRIMARY KEY (username,watched_date)
+);
+
+create table awards(
+    award_name TEXT NOT NULL,
+    award_date DATE NOT NULL,
+    PRIMARY KEY (award_name, award_date)
+);
+
+create table cast_people(
+    person_name TEXT PRIMARY KEY NOT NULL,
+    nacionality TEXT NOT NULL,
+    birth_date DATE NOT NULL
+);
+
+create table person_won(
+    person_name TEXT NOT NULL,
+    award_name TEXT NOT NULL,
+    award_date DATE NOT NULL,
+    PRIMARY KEY (award_name,award_date)
+);
+
+create table person_nominee(
+    person_name TEXT NOT NULL,
+    award_name TEXT NOT NULL,
+    award_date DATE NOT NULL,
+    PRIMARY KEY (person_name,award_name,award_date)
+);
+
+create table directors(
+    person_name TEXT PRIMARY KEY NOT NULL
+);
+
+create table actors(
+    person_name TEXT PRIMARY KEY NOT NULL
 )
