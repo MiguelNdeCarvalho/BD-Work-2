@@ -31,8 +31,46 @@ create table title(
     title_pt TEXT NOT NULL,
     title_orig TEXT NOT NULL,
     foreign key (movie_ID) references movies(movie_ID) on delete cascade
-)
+);
 
-create table movie_won(
-    mo
+create table movies_won(
+    movie_ID SERIAL NOT NULL,
+    award_name TEXT NOT NULL,
+    award_date DATE NOT NULL,
+    foreign key (movie_ID) references movies(movie_ID) on delete cascade,
+    PRIMARY KEY (movie_ID, award_name)
+);
+
+create table movies_nominee(
+    movie_ID SERIAL NOT NULL,
+    award_name TEXT NOT NULL,
+    award_date DATE NOT NULL,
+    foreign key (movie_ID) references movies(movie_ID) on delete cascade,
+    PRIMARY KEY (movie_ID, award_name, award_date)
+);
+
+create table casted_by(
+    movie_ID SERIAL PRIMARY KEY NOT NULL,
+    person_name TEXT NOT NULL,
+    foreign key (movie_ID) references movies(movie_ID) on delete cascade
+);
+
+create table directed_by(
+    movie_ID SERIAL PRIMARY KEY NOT NULL,
+    person_name TEXT NOT NULL,
+    foreign key (movie_ID) references movies(movie_ID) on delete cascade
+);
+
+create table lang_available(
+    movie_ID SERIAL NOT NULL,
+    lang TEXT NOT NULL,
+    foreign key (movie_ID) references movies(movie_ID) on delete cascade,
+    PRIMARY KEY (movie_ID,lang)
+);
+
+create table categories(
+    movie_ID SERIAL NOT NULL,
+    category TEXT NOT NULL,
+    foreign key (movie_ID) references movies(movie_ID) on delete cascade,
+    PRIMARY KEY (movie_ID,category)
 )
