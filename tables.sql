@@ -22,7 +22,6 @@ create table movies(
     synopse TEXT NOT NULL,
     place TEXT NOT NULL,
     orig_lang TEXT NOT NULL,
-    place TEXT NOT NULl
 );
 
 create table title(
