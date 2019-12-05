@@ -22,7 +22,7 @@ create table movies(
     synopse TEXT NOT NULL,
     place TEXT NOT NULL,
     orig_lang TEXT NOT NULL,
-    url TEXT NOT NULl
+    place TEXT NOT NULl
 );
 
 create table title(
@@ -89,7 +89,7 @@ create table awards(
     PRIMARY KEY (award_name, award_date)
 );
 
-create table cast_people(
+create table crew_people(
     person_name TEXT PRIMARY KEY NOT NULL,
     nacionality TEXT NOT NULL,
     birth_date DATE NOT NULL
