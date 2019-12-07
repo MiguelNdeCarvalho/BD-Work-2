@@ -48,6 +48,8 @@ create table movies_nominee(
     award_name TEXT NOT NULL,
     award_date DATE NOT NULL,
     foreign key (movie_ID) references movies(movie_ID) on delete cascade,
+    foreign key (award_name) references awards(award_name) on delete cascade,
+    foreign key (award_date) references awards(award_date) on delete cascade,
     PRIMARY KEY (movie_ID, award_name, award_date)
 );
 
