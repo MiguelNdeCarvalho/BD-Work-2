@@ -116,6 +116,9 @@ create table person_nominee(
     person_name TEXT NOT NULL,
     award_name TEXT NOT NULL,
     award_date DATE NOT NULL,
+    foreign key (person_name) references crew_people(person_name) on delete cascade,
+    foreign key (award_name) references awards(award_name) on delete cascade,
+    foreign key (award_date) references awards(award_date) on delete cascade,
     PRIMARY KEY (person_name,award_name,award_date)
 );
 
