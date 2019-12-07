@@ -63,7 +63,8 @@ create table casted_by(
 create table directed_by(
     movie_ID SERIAL PRIMARY KEY NOT NULL,
     person_name TEXT NOT NULL,
-    foreign key (movie_ID) references movies(movie_ID) on delete cascade
+    foreign key (movie_ID) references movies(movie_ID) on delete cascade,
+    foreign key (person_name) references crew_people(person_name) on delete cascade
 );
 
 create table lang_available(
