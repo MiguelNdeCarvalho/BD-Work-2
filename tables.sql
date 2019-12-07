@@ -86,6 +86,7 @@ create table history(
     movie_ID SERIAL NOT NULL,
     watched_date DATE NOT NULL,
     foreign key (movie_ID) references movies(movie_ID) on delete cascade,
+    foreign key (username) references clients(username) on delete cascade,
     PRIMARY KEY (username,watched_date)
 );
 
@@ -105,6 +106,9 @@ create table person_won(
     person_name TEXT NOT NULL,
     award_name TEXT NOT NULL,
     award_date DATE NOT NULL,
+    foreign key (person_name) references crew_people(person_name) on delete cascade,
+    foreign key (award_name) references awards(award_name) on delete cascade,
+    foreign key (award_date) references awards(award_date) on delete cascade,
     PRIMARY KEY (award_name,award_date)
 );
 
