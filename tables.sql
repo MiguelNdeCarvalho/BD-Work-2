@@ -123,9 +123,11 @@ create table person_nominee(
 );
 
 create table directors(
-    person_name TEXT PRIMARY KEY NOT NULL
+    person_name TEXT PRIMARY KEY NOT NULL,
+    foreign key (person_name) references crew_people(person_name) on delete cascade
 );
 
 create table actors(
-    person_name TEXT PRIMARY KEY NOT NULL
+    person_name TEXT PRIMARY KEY NOT NULL,
+    foreign key (person_name) references crew_people(person_name) on delete cascade
 )
