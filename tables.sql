@@ -8,12 +8,24 @@ create table clients(
 );
 
 create table payments(
-    username TEXT,
+    username TEXT NOT NULL,
     pay_ID SERIAL NOT NULL,
     pay_date date NOT NULL,
     amount MONEY NOT NULL,
     foreign key (username) references clients(username) on delete cascade,
     PRIMARY KEY (username, pay_ID)
+);
+
+create table awards(
+    award_name TEXT NOT NULL,
+    award_date DATE NOT NULL,
+    PRIMARY KEY (award_name, award_date)
+);
+
+create table crew_people(
+    person_name TEXT PRIMARY KEY NOT NULL,
+    nacionality TEXT NOT NULL,
+    birth_date DATE NOT NULL
 );
 
 create table movies(
@@ -38,8 +50,7 @@ create table movies_won(
     award_name TEXT NOT NULL,
     award_date DATE NOT NULL,
     foreign key (movie_ID) references movies(movie_ID) on delete cascade,
-    foreign key (award_name) references awards(award_name) on delete cascade,
-    foreign key (award_date) references awards(award_date) on delete cascade,
+    foreign key (award_name,award_date) references awards(award_name,award_date) on delete cascade,
     PRIMARY KEY (movie_ID, award_name)
 );
 
@@ -48,8 +59,7 @@ create table movies_nominee(
     award_name TEXT NOT NULL,
     award_date DATE NOT NULL,
     foreign key (movie_ID) references movies(movie_ID) on delete cascade,
-    foreign key (award_name) references awards(award_name) on delete cascade,
-    foreign key (award_date) references awards(award_date) on delete cascade,
+    foreign key (award_name,award_date) references awards(award_name,award_date) on delete cascade,
     PRIMARY KEY (movie_ID, award_name, award_date)
 );
 
@@ -90,25 +100,13 @@ create table history(
     PRIMARY KEY (username,watched_date)
 );
 
-create table awards(
-    award_name TEXT NOT NULL,
-    award_date DATE NOT NULL,
-    PRIMARY KEY (award_name, award_date)
-);
-
-create table crew_people(
-    person_name TEXT PRIMARY KEY NOT NULL,
-    nacionality TEXT NOT NULL,
-    birth_date DATE NOT NULL
-);
 
 create table person_won(
     person_name TEXT NOT NULL,
     award_name TEXT NOT NULL,
     award_date DATE NOT NULL,
     foreign key (person_name) references crew_people(person_name) on delete cascade,
-    foreign key (award_name) references awards(award_name) on delete cascade,
-    foreign key (award_date) references awards(award_date) on delete cascade,
+    foreign key (award_name,award_date) references awards(award_name,award_date) on delete cascade,
     PRIMARY KEY (award_name,award_date)
 );
 
@@ -117,8 +115,7 @@ create table person_nominee(
     award_name TEXT NOT NULL,
     award_date DATE NOT NULL,
     foreign key (person_name) references crew_people(person_name) on delete cascade,
-    foreign key (award_name) references awards(award_name) on delete cascade,
-    foreign key (award_date) references awards(award_date) on delete cascade,
+    foreign key (award_name,award_date) references awards(award_name,award_date) on delete cascade,
     PRIMARY KEY (person_name,award_name,award_date)
 );
 
