@@ -1,4 +1,4 @@
-<mxfile host="www.draw.io" modified="2019-12-08T15:31:17.161Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36" etag="AAgGUHj1A7wXX86HfIvO" version="12.3.8" type="github" pages="1">
+<mxfile host="www.draw.io" modified="2019-12-08T15:35:43.105Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36" etag="uf4mwuLWce8m3smNDkbO" version="12.3.8" type="github" pages="1">
   <diagram id="RYnue4cF0OKcC7SYmtah" name="Page-1">
     <mxGraphModel dx="1406" dy="778" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -157,7 +157,7 @@
             <mxPoint x="170" y="450" as="targetPoint"/>
           </mxGeometry>
         </mxCell>
-        <mxCell id="TG9i973_F82ijA39gTVR-43" value="pay_id" style="ellipse;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+        <mxCell id="TG9i973_F82ijA39gTVR-43" value="pay_id" style="ellipse;whiteSpace=wrap;html=1;align=center;fontStyle=4" parent="1" vertex="1">
           <mxGeometry x="490" y="10" width="70" height="28" as="geometry"/>
         </mxCell>
         <mxCell id="TG9i973_F82ijA39gTVR-44" value="pay_date" style="ellipse;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
@@ -262,10 +262,10 @@
             <mxPoint x="640" y="300" as="targetPoint"/>
           </mxGeometry>
         </mxCell>
-        <mxCell id="TG9i973_F82ijA39gTVR-87" value="nacionality" style="ellipse;whiteSpace=wrap;html=1;align=center;fontStyle=4" parent="1" vertex="1">
+        <mxCell id="TG9i973_F82ijA39gTVR-87" value="nacionality" style="ellipse;whiteSpace=wrap;html=1;align=center;fontStyle=0" parent="1" vertex="1">
           <mxGeometry x="502.5" y="147" width="70" height="28" as="geometry"/>
         </mxCell>
-        <mxCell id="TG9i973_F82ijA39gTVR-88" value="birth_date" style="ellipse;whiteSpace=wrap;html=1;align=center;fontStyle=4" parent="1" vertex="1">
+        <mxCell id="TG9i973_F82ijA39gTVR-88" value="birth_date" style="ellipse;whiteSpace=wrap;html=1;align=center;fontStyle=0" parent="1" vertex="1">
           <mxGeometry x="610" y="147" width="70" height="28" as="geometry"/>
         </mxCell>
         <mxCell id="TG9i973_F82ijA39gTVR-89" value="" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="TG9i973_F82ijA39gTVR-87" target="TG9i973_F82ijA39gTVR-79" edge="1">
