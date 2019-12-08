@@ -38,13 +38,13 @@ with x as ( select movie_ID,count(*) as N_Prizes from movies_won group by movie_
 select x.movie_ID from x
 where N_Prizes=(select max(N_Prizes)from x)
 
---i)
+--i ta)
 
-with  x as (select movie_ID,person_name,count(award_name)) from movie,crew_of,person_won
-where movie.movie_ID=crew_of.movie_ID and crew_of.person_name=person_won.person_name
-group by movie_ID,person_name),
+with  x as (select movies.movie_ID,casted_by.person_name,count(award_name) from movies,casted_by,person_won
+where movies.movie_ID=casted_by.movie_ID and casted_by.person_name=person_won.person_name
+group by movies.movie_ID,casted_by.person_name),
 
-with y as (select movie_ID,count(person_name) as atores_premiados from x
+y as (select movie_ID,count(person_name) as atores_premiados from x
 group by movie_ID)
 
 select movie_ID from y where atores_premiados=(select max(atores_premiados)from y)
