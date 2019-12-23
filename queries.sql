@@ -25,8 +25,16 @@ select sum(amount) from payments where '2019-11-01' <= pay_date and pay_date < '
 
 select distinct movie_ID from history where watched_date='7/12/2019'
 
---g)
- 
+--g ta)
+with x as (SELECT person_name as name, category as category from directed_by, movies, categories where directed_by.movie_id=movies.movie_id and movies.movie_id=categories.movie_id)
+
+select distinct x.name
+from x
+except
+select distinct x.name
+from x
+where x.category='Fantasy' 
+
 --f ta)
 
 select distinct movie_ID from history where username='alentejano2000'
