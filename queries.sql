@@ -59,4 +59,12 @@ select movie_ID from y where atores_premiados=(select max(atores_premiados)from 
 
 --j)
 
-
+select distinct T.username 
+from clients as T
+where not exists(select history.username
+				 from history 
+				 except
+                 SELECT history.username
+                 FROM movies, history
+                 WHERE movies.movie_id=history.movie_id
+				)
